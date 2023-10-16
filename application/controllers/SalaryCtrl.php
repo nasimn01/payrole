@@ -33,6 +33,15 @@ class SalaryCtrl extends CI_Controller {
 		$data['page']="salary/create";
 		$this->load->view('app',$data);
 	}
+	// public function edit_salary($id) {
+	// 	// Load your model
+	// 	$this->load->helper('form');
+	// 	$data['salary_data'] = $this->um->single_retrieve($id);
+	// 	$data['employees'] =$this->cm->common_select('employee','id,name,designation,salary,pf,hr');
+	
+	// 	$data['page']="salary/edit";
+	// 	$this->load->view('app',$data);
+	// }
 
 	public function get_salarydata_list(){
         $emp_id=$this->input->get('emp_id');
@@ -119,6 +128,7 @@ class SalaryCtrl extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE){
 			$data['salary']=$this->um->single_retrive($id);
+			$data['employee'] =$this->cm->common_select('employee','id,name,designation,salary,pf,hr');
             $this->load->view('salary/edit',$data);
         }else{
 			$ud['name']=$this->input->post('name');
