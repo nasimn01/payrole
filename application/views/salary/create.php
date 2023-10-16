@@ -47,27 +47,27 @@
           </div>
           <div class="col-6">
               <label for="salary">Basic Salary:</label>
-              <input type="number" value="<?= set_value('salary'); ?>" class="form-control" id="salary" name="salary">
+              <input type="number" readonly value="<?= set_value('salary'); ?>" class="form-control" id="salary" name="salary">
               <span class="text-danger"><?= form_error('salary'); ?></span>
           </div>
           <div class="col-6">
               <label for="pf">Provident Found:</label>
-              <input type="number" value="<?= set_value('pf'); ?>" class="form-control" id="pf" name="pf">
+              <input type="number" readonly value="<?= set_value('pf'); ?>" class="form-control" id="pf" name="pf">
               <span class="text-danger"><?= form_error('pf'); ?></span>
           </div>
           <div class="col-6">
               <label for="hr">House Rant:</label>
-              <input type="number" value="<?= set_value('hr'); ?>" class="form-control" id="hr" name="hr">
+              <input type="number" readonly value="<?= set_value('hr'); ?>" class="form-control" id="hr" name="hr">
               <span class="text-danger"><?= form_error('hr'); ?></span>
           </div>
           <div class="col-6">
               <label for="deduction">Deduction:</label>
-              <input type="number" value="<?= set_value('deduction'); ?>" class="form-control" id="deduction" name="deduction">
+              <input type="number" readonly value="<?= set_value('deduction'); ?>" class="form-control" id="deduction" name="deduction">
               <span class="text-danger"><?= form_error('deduction'); ?></span>
           </div>
           <div class="col-6">
               <label for="payment">Payment:</label>
-              <input type="number" value="<?= set_value('payment'); ?>" class="form-control" id="payment" name="payment">
+              <input type="number" readonly value="<?= set_value('payment'); ?>" class="form-control" id="payment" name="payment">
               <span class="text-danger"><?= form_error('payment'); ?></span>
           </div>
           <div class="col-12 mt-2">

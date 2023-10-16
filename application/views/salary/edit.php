@@ -26,9 +26,9 @@
                       <?php
                       if ($employee) {
                         foreach ($employee as $e) {
-                          $selected = ($e->id == $salary->employee_id) ? 'selected' : ''; // Check if the value matches the database value
+                          $selected = ($e->id == $salary->employee_id) ? 'selected' : '';
                       ?>
-                        <option value="<?= $e->id ?>" <?= $selected ?>><?= $e->name ?></option>
+                        <option value="<?= $e->id ?>" data-pf="<?= $e->pf ?>" data-hr="<?= $e->hr ?>" data-salary="<?= $e->salary ?>" <?= $selected ?>><?= $e->name ?></option>
                       <?php
                         }
                       }
@@ -44,9 +44,7 @@
                       <?php for ($i = 0; $i < 8; $i++) { 
                         $yearValue = date("Y", strtotime("-$i years"));
                       ?>
-                      <option value="<?= $yearValue ?>" <?= set_select('year', $yearValue, ($yearValue == $salary->year)) ?>>
-                        <?= $yearValue ?>
-                      </option>
+                      <option value="<?= $yearValue ?>" <?= set_select('year', $yearValue, ($yearValue == $salary->year)) ?>><?= $yearValue ?></option>
                       <?php } ?>
                   </select>
                 <span class="text-danger"><?= form_error('year'); ?></span>
@@ -65,27 +63,27 @@
             </div>
             <div class="col-6">
                 <label for="salary">Basic Salary:</label>
-                <input type="number" value="<?= set_value('salary', $salary->salary); ?>" class="form-control" id="salary" name="salary">
+                <input type="number" readonly value="<?= set_value('salary', $salary->salary); ?>" class="form-control" id="salary" name="salary">
                 <span class="text-danger"><?= form_error('salary'); ?></span>
             </div>
             <div class="col-6">
                 <label for="pf">Provident Found:</label>
-                <input type="number" value="<?= set_value('pf', $salary->pf); ?>" class="form-control" id="pf" name="pf">
+                <input type="number" readonly value="<?= set_value('pf', $salary->pf); ?>" class="form-control" id="pf" name="pf">
                 <span class="text-danger"><?= form_error('pf'); ?></span>
             </div>
             <div class="col-6">
                 <label for="hr">House Rant:</label>
-                <input type="number" value="<?= set_value('hr', $salary->hr); ?>" class="form-control" id="hr" name="hr">
+                <input type="number" readonly value="<?= set_value('hr', $salary->hr); ?>" class="form-control" id="hr" name="hr">
                 <span class="text-danger"><?= form_error('hr'); ?></span>
             </div>
             <div class="col-6">
                 <label for="deduction">Deduction:</label>
-                <input type="number" value="<?= set_value('deduction', $salary->deduction); ?>" class="form-control" id="deduction" name="deduction">
+                <input type="number" readonly value="<?= set_value('deduction', $salary->deduction); ?>" class="form-control" id="deduction" name="deduction">
                 <span class="text-danger"><?= form_error('deduction'); ?></span>
             </div>
             <div class="col-6">
                 <label for="payment">Payment:</label>
-                <input type="number" value="<?= set_value('payment', $salary->payment); ?>" class="form-control" id="payment" name="payment">
+                <input type="number" readonly value="<?= set_value('payment', $salary->payment); ?>" class="form-control" id="payment" name="payment">
                 <span class="text-danger"><?= form_error('payment'); ?></span>
             </div>
             <div class="col-12 mt-2">
@@ -114,6 +112,7 @@
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   function get_sal(){
     let emp_id=$('#emp_id').val();
