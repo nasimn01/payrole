@@ -23,28 +23,28 @@
 						<?php $attributes = array('class' => 'form-horizontal'); ?>
 						<?= form_open('',$attributes) ?>
 
-							<div class="form-group row">
+							<div class="form-group row py-1">
 								<label class="col-sm-3 control-label" for="opassword">Old Password</label>
 								<div class="col-sm-9">
 									<input type="password" class="form-control" name="opassword" id="opassword">
 									<span class="help-block"><small><?= form_error('opassword'); ?></small></span>
 								</div>
 							</div>
-							<div class="form-group row">
+							<div class="form-group row py-1">
 								<label class="col-sm-3 control-label" for="password">New Password</label>
 								<div class="col-sm-9">
 									<input type="password" class="form-control" name="password" id="password">
 									<span class="help-block"><small><?= form_error('password'); ?></small></span>
 								</div>
 							</div>
-							<div class="form-group row">
+							<div class="form-group row py-1">
 								<label class="col-sm-3 control-label" for="cpassword">Confirm New Password</label>
 								<div class="col-sm-9">
 									<input type="password" class="form-control" name="cpassword" id="cpassword">
 									<span class="help-block"><small><?= form_error('password'); ?></small></span>
 								</div>
 							</div>
-							<div class="form-group row">
+							<div class="form-group row py-1">
 								<label class="col-sm-3 control-label"></label>
 								<div class="col-sm-9">
 									<button type="submit" class="btn btn-primary">Update</button>

@@ -1,5 +1,3 @@
-
-
 <table class="table">
     <thead>
         <tr>
@@ -18,7 +16,7 @@
                 <td><?= $emp->name ?></td>
                 <td><?= $emp->contact ?></td>
                 <td>
-                    <select class="form-control" name="status[<?= $emp->id ?>]" id="status">
+                    <select class="form-control form-select" name="status[<?= $emp->id ?>]" id="status">
                         <option value="1">Present</option>
                         <option value="0">Absent</option>
                         <option value="2">Leave</option>

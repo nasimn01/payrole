@@ -68,6 +68,7 @@ $route['employee/add']['get'] = 'UserCtrl/create';
 $route['employee/store']['post'] = 'UserCtrl/store';
 $route['employee/edit/(:num)'] = 'UserCtrl/update/$1';
 $route['employee/delete/(:num)'] = 'UserCtrl/destroy/$1';
+$route['auth/delete/(:num)'] = 'UserCtrl/destroy_user/$1';
 
 /* attendance route */
 $route['attendance'] = 'AttendanceCtrl/index';
@@ -90,7 +91,7 @@ $route['salary/delete/(:num)'] = 'SalaryCtrl/destroy/$1';
 /* auth route */
 $route['auth'] = 'AuthCtrl/index';
 $route['auth/add']['get'] = 'AuthCtrl/register';
-$route['auth/delete/(:num)'] = 'AuthCtrl/destroy/$1';
+// $route['auth/delete/(:num)'] = 'AuthCtrl/destroy/$1';
 
 /* Auth route */
 $route['register']['get'] = 'AuthCtrl/register';

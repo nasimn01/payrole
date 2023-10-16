@@ -12,7 +12,9 @@
 <!--/ topbar -->
 
 <!-- content -->
-<?php $this->load->view($page)  ?>
+<section style="height: -webkit-fill-available;">
+        <?php $this->load->view($page)  ?>
+</section>
 <!--/ content -->
 
 

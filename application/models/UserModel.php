@@ -30,4 +30,8 @@ class UserModel extends CI_Model {
 		$this->db->delete('employee',$condition);
 		return $this->db->affected_rows();
 	}
+	public function delete_user($condition){
+		$this->db->delete('tbl_auth',$condition);
+		return $this->db->affected_rows();
+	}
 }

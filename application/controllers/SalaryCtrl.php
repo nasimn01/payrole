@@ -78,7 +78,9 @@ class SalaryCtrl extends CI_Controller {
 		$this->form_validation->set_rules('month', 'Month', 'required');
 
 		if ($this->form_validation->run() == FALSE){
-            $this->load->view('salary/create');
+			$data['page']="salary/create";
+			$this->load->view('app',$data);
+			
         }else{
 			$ud['employee_id']=$this->input->post('emp_id');
 			$ud['salary']=$this->input->post('salary');
@@ -107,29 +109,31 @@ class SalaryCtrl extends CI_Controller {
 		$this->load->library('form_validation');
 
 		/* set validatin */
-		$this->form_validation->set_rules('name', 'Full Name', 'required');
-		$this->form_validation->set_rules('designation', 'Designation', 'required');
-		$this->form_validation->set_rules('contact', 'Contact', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('nid', 'NID', 'required');
-		$this->form_validation->set_rules('salary', 'Salary', 'required');
-		$this->form_validation->set_rules('pf', 'Provident Found', 'required');
+		/* set validatin */
+		$this->form_validation->set_rules('emp_id', 'Employee Id', 'required');
+		$this->form_validation->set_rules('salary', 'salary', 'required');
+		$this->form_validation->set_rules('pf', 'Pro.fund', 'required');
 		$this->form_validation->set_rules('hr', 'House Rant', 'required');
+		$this->form_validation->set_rules('deduction', 'Deduction', 'required');
+		$this->form_validation->set_rules('payment', 'Payment', 'required');
+		$this->form_validation->set_rules('year', 'Year', 'required');
+		$this->form_validation->set_rules('month', 'Month', 'required');
 		
 
 		if ($this->form_validation->run() == FALSE){
 			$data['salary']=$this->um->single_retrive($id);
 			$data['employee'] =$this->cm->common_select('employee','id,name,designation,salary,pf,hr');
-            $this->load->view('salary/edit',$data);
+			$data['page']="salary/edit";
+			$this->load->view('app',$data);
         }else{
-			$ud['name']=$this->input->post('name');
-			$ud['designation']=$this->input->post('designation');
-			$ud['contact']=$this->input->post('contact');
-			$ud['email']=$this->input->post('email');
-			$ud['nid']=$this->input->post('nid');
+			$ud['employee_id']=$this->input->post('emp_id');
 			$ud['salary']=$this->input->post('salary');
 			$ud['pf']=$this->input->post('pf');
 			$ud['hr']=$this->input->post('hr');
+			$ud['deduction']=$this->input->post('deduction');
+			$ud['payment']=$this->input->post('payment');
+			$ud['year']=$this->input->post('year');
+			$ud['month']=$this->input->post('month');
 
 			if($this->um->update($id,$ud)){
 				$this->session->set_flashdata('msg','<b class="text-success">Data updated</b>');

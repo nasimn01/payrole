@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>add employee</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-
 <div class="container mt-3">
-  <div class="card border-0 m-3 px-3 shadow">
+  <div class="card border-0 py-2 px-3 shadow">
   <h4>Add New Employee</h4>
   <?php if($this->session->flashdata('msg')){
     echo $this->session->flashdata('msg');
@@ -64,6 +53,3 @@
   </form>
   </div>
 </div>
-
-</body>
-</html>

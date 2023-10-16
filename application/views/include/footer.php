@@ -6,7 +6,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  Designed By ❤️ Zalal Uddin Masum
+                  Designed By ❤️ X-Developer
                   
                 </div>
                 

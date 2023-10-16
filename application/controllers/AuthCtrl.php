@@ -116,6 +116,7 @@ class AuthCtrl extends CI_Controller {
             
         }
 	}
+
 	public function logout(){
 		session_destroy();
 		redirect('login');

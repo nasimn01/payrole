@@ -49,7 +49,8 @@ class UserCtrl extends CI_Controller {
 		$this->form_validation->set_rules('hr', 'House Rant', 'required');
 
 		if ($this->form_validation->run() == FALSE){
-            $this->load->view('employee/create');
+			$data['page']="employee/create";
+			$this->load->view('app',$data);
         }else{
 			$ud['name']=$this->input->post('name');
 			$ud['designation']=$this->input->post('designation');
@@ -90,7 +91,8 @@ class UserCtrl extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE){
 			$data['employee']=$this->um->single_retrive($id);
-            $this->load->view('employee/edit',$data);
+			$data['page']="employee/edit";
+			$this->load->view('app',$data);
         }else{
 			$ud['name']=$this->input->post('name');
 			$ud['designation']=$this->input->post('designation');
@@ -120,5 +122,14 @@ class UserCtrl extends CI_Controller {
 		}
 
 		redirect('employee');
+	}
+	public function destroy_user($id){
+		$condition['id']=$id;
+		if($this->um->delete_user($condition)){
+			$this->session->set_flashdata('msg','<b class="text-success">Data deleted</b>');
+		}else{
+			$this->session->set_flashdata('msg','<b class="text-danger">Please Try again</b>');
+		}
+		redirect('auth');
 	}
 }

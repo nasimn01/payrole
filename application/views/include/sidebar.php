@@ -61,7 +61,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat IT</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Payrole</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -89,11 +89,11 @@
                 <div data-i18n="Account Settings">Account Settings</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
-                   <a href="<?= base_url('auth') ?>" class="menu-link"> <!--pages-account-settings-account.html-->
+                <!-- <li class="menu-item">
+                   <a href="<?= base_url('auth') ?>" class="menu-link">
                     <div data-i18n="Admin">Admin List</div>
                   </a>
-                </li>
+                </li> -->
                 <li class="menu-item">
                   <a href="<?= base_url('employee') ?>" class="menu-link">
                     <div data-i18n="Employee">Employee List</div>
@@ -107,14 +107,14 @@
             <li class="menu-item">
               <a href="<?= base_url('attendance') ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Attendance Table</div>
+                <div data-i18n="Basic">Attendance</div>
               </a>
             </li>
             <!-- Salary Structure -->
             <li class="menu-item">
               <a href="<?= base_url('salary') ?>" class="menu-link">
                 <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                <div data-i18n="User interface">Salary Structure</div>
+                <div data-i18n="User interface">Salary</div>
               </a>
             </li>
         </aside>

@@ -35,7 +35,7 @@
                 <td class="<?= $bg ?> bg-gradient <?= $text ?>"><?= $status ?></th>
                 <td>
                     <?php if(date('Y-m-d') == $emp->att_date) { ?>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" onclick="emp_set('<?= $emp->name ?>','<?= $emp->id ?>','<?= $emp->status ?>')" class="btn btn-info"> <i class="tf-icons bx bx-exit"></i></button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#attendce" data-member-id="<?= $emp->id ?>" data-attend-status="<?= $emp->status ?>" class="btn btn-info"> <i class="tf-icons bx bx-exit"></i></button>
                     <?php } ?>
                 </td>
             </tr>
@@ -43,37 +43,51 @@
     </tbody>
 </table>
 
-<div class="modal" id="myModal">
+<div class="modal" id="attendce">
   <div class="modal-dialog">
     <div class="modal-content">
     <?= form_open('attendance/update') ?>
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title"> </h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <div class="mb-3 mt-3">
-            <label for="att_date">Status:</label>
-            <select name="status" id="status" class="form-control">
-                <option value="1">Present</option>
-                <option value="0">Absent</option>
-                <option value="2">Leave</option>
-            </select>
-            <input type="hidden" name="att_id" id="upattid">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title"> </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="mb-3 mt-3">
-            <button type="submit" class="btn btn-primary">Update</button>
-        </div>
-      </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="mb-3 mt-3">
+                <label for="att_date">Status:</label>
+                <select name="status" id="attendStatus" class="form-control form-select">
+                    <option value="1">Present</option>
+                    <option value="0">Absent</option>
+                    <option value="2">Leave</option>
+                </select>
+                <input type="hidden" name="att_id" id="memberId">
+            </div>
+            <div class="mb-3 mt-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
     </form>
     </div>
   </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#attendce').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var memberId = button.data('member-id');
+            var status = button.data('attend-status');
+
+            // Set the values in the modal
+            var modal = $(this);
+            modal.find('#memberId').val(memberId);
+            modal.find('#attendStatus').val(status);
+        });
+    });
+</script>

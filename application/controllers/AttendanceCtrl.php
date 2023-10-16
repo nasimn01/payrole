@@ -98,7 +98,7 @@ class AttendanceCtrl extends CI_Controller {
         }else{
             $this->session->set_flashdata('msg','<b class="text-danger">Please Try again</b>');
         }
-			redirect('attendance');
+        redirect('attendance');
         
 	}
 
